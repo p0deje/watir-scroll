@@ -28,7 +28,7 @@ $ gem install watir-scroll
 button = browser.button(:text => 'Click')
 
 browser.scroll.to :top      # scrolls to the top of the page
-browser.scroll.to :center   # scrolls to the top of the page
+browser.scroll.to :center   # scrolls to the center of the page
 browser.scroll.to :bottom   # scrolls to the bottom of the page
 browser.scroll.to [10, 10]  # scrolls to coordinates x and y
 browser.scroll.to button    # scrolls to element
