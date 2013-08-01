@@ -5,32 +5,36 @@ describe "watir-scoll" do
     it "scrolls to the top of the page" do
       @browser.scroll.to :bottom
       @browser.scroll.to :top
-      visible?(@browser.button(text: 'Top')).should    == true
-      visible?(@browser.button(text: 'Bottom')).should == false
+      expect(visible?(@browser.button(text: 'Top'))).to eq(true)
+      expect(visible?(@browser.button(text: 'Bottom'))).to eq(false)
     end
 
     it "scrolls to the center of the page" do
       @browser.scroll.to :center
-      visible?(@browser.button(text: 'Top')).should    == false
-      visible?(@browser.button(text: 'Bottom')).should == false
+      expect(visible?(@browser.button(text: 'Top'))).to eq(false)
+      expect(visible?(@browser.button(text: 'Bottom'))).to eq(false)
     end
 
     it "scrolls to the bottom of the page" do
       @browser.scroll.to :bottom
-      visible?(@browser.button(text: 'Top')).should    == false
-      visible?(@browser.button(text: 'Bottom')).should == true
+      expect(visible?(@browser.button(text: 'Top'))).to eq(false)
+      expect(visible?(@browser.button(text: 'Bottom'))).to eq(true)
     end
 
     it "scrolls to element" do
       button = @browser.button(text: 'Bottom')
       @browser.scroll.to button
-      visible?(button).should == true
+      expect(visible?(button)).to eq(true)
     end
 
     it "scrolls to coordiantes" do
       button = @browser.button(text: 'Bottom')
       @browser.scroll.to [button.wd.location.x, button.wd.location.y]
-      visible?(button).should == true
+      expect(visible?(button)).to eq(true)
+    end
+
+    it "raises error when scroll point is not vaild" do
+      expect { @browser.scroll.to(:blah) }.to raise_error(ArgumentError)
     end
   end
 end
