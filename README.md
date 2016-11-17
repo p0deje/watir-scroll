@@ -1,6 +1,6 @@
 # watir-scroll [![Build Status](https://travis-ci.org/p0deje/watir-scroll.svg?branch=master)](https://travis-ci.org/p0deje/watir-scroll) [![Gem Version](https://badge.fury.io/rb/watir-scroll.svg)](http://badge.fury.io/rb/watir-scroll)
 
-Scrolling API for [watir-webdriver](http://github.com/watir/watir-webdriver).
+Scrolling API for [Watir](http://github.com/watir/watir).
 
 ## Installation
 

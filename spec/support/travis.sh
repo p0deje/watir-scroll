@@ -9,7 +9,6 @@ curl -L -O "http://commondatastorage.googleapis.com/chromium-browser-snapshots/L
 unzip chrome-linux.zip
 ln -s "$(pwd)/chrome-linux/chrome" "$(pwd)/bin/google-chrome"
 
-CHROMEDRIVER_VERSION=$(curl -s http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-curl -L -O "http://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+curl -L -O "http://chromedriver.storage.googleapis.com/2.21/chromedriver_linux64.zip"
 unzip chromedriver_linux64.zip
 ln -s "$(pwd)/chromedriver" "$(pwd)/bin/chromedriver"
