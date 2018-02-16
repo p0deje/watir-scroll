@@ -24,9 +24,15 @@ describe Watir::Browser do
       expect(visible?(@browser.button(text: 'Bottom'))).to eq(true)
     end
 
-    it "scrolls to coordiantes" do
+    it "scrolls to coordinates" do
       button = @browser.button(text: 'Bottom')
       @browser.scroll.to [button.wd.location.x, button.wd.location.y]
+      expect(visible?(button)).to eq(true)
+    end
+
+    it "scrolls by offset" do
+      button = @browser.button(text: 'Bottom')
+      @browser.scroll.by(0, button.wd.location.y)
       expect(visible?(button)).to eq(true)
     end
 

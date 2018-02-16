@@ -23,8 +23,19 @@ module Watir
                else
                  raise ArgumentError, "Don't know how to scroll to: #{param}!"
                end
+        @browser.execute_script(*args)
 
-         @browser.execute_script(*args)
+        self
+      end
+
+      #
+      # Scrolls by offset.
+      # @param [Fixnum] left Horizontal offset
+      # @param [Fixnum] top Vertical offset
+      #
+      def by(left, top)
+        @browser.execute_script('window.scrollBy(arguments[0], arguments[1]);', Integer(left), Integer(top))
+        self
       end
 
     end # Scroll

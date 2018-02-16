@@ -23,6 +23,13 @@ describe Watir::Element do
       expect(visible?(@browser.button(text: 'Bottom'))).to eq(false)
     end
 
+    it "scrolls by offset" do
+      @browser.button(text: 'Bottom').scroll.to.by(-10000, -10000) # simulate scrolling to top
+      expect(visible?(@browser.button(text: 'Top'))).to eq(true)
+      expect(visible?(@browser.button(text: 'Center'))).to eq(true)
+      expect(visible?(@browser.button(text: 'Bottom'))).to eq(false)
+    end
+
     it "raises error when scroll param is not vaild" do
       expect { @browser.button(text: 'Top').scroll.to(:blah) }.to raise_error(ArgumentError)
     end
