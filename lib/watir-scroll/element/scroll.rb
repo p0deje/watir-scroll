@@ -16,9 +16,10 @@ module Watir
                  ['arguments[0].scrollIntoView();', @element]
                when :center
                  script = <<-JS
+                   var bodyRect = document.body.getBoundingClientRect();
                    var elementRect = arguments[0].getBoundingClientRect();
-                   var top = elementRect.top - (window.innerHeight / 2);
-                   var left = elementRect.left - (window.innerWidth / 2);
+                   var left = (elementRect.left - bodyRect.left) - (window.innerWidth / 2);
+                   var top = (elementRect.top - bodyRect.top) - (window.innerHeight / 2);
                    window.scrollTo(left, top);
                  JS
                  [script, @element]

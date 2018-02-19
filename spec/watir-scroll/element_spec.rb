@@ -23,12 +23,11 @@ describe Watir::Element do
       expect(visible?(@browser.button(text: 'Bottom'))).to eq(false)
     end
 
-    it "scrolls to passed element" do
-      @browser.button(text: 'Center').scroll.to(:top)
-      expect(visible?(@browser.button(text: 'Top'))).to eq(false)
-
-      @browser.button(text: 'Top').scroll.to(:center)
-      expect(visible?(@browser.button(text: 'Top'))).to eq(true)
+    it "scrolls to element multiple times" do
+      2.times do
+        @browser.button(text: 'Center').scroll.to(:center)
+        expect(visible?(@browser.button(text: 'Top'))).to eq(false)
+      end
     end
 
     it "scrolls by offset" do
