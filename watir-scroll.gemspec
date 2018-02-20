@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "watir-scroll"
-  spec.version       = "0.3.0"
+  spec.version       = "0.4.0"
   spec.authors       = "Alex Rodionov"
   spec.email         = "p0deje@gmail.com"
   spec.description   = "Scrolling API for Watir"
