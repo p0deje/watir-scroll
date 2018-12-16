@@ -11,6 +11,12 @@ Gem::Specification.new do |spec|
   spec.summary       = "Scrolling API for Watir"
   spec.homepage      = "https://github.com/p0deje/watir-scroll"
   spec.license       = "MIT"
+  spec.post_install_message = <<-POST_INSTALL_MESSAGE
+
+As of Watir 6.16, watir-scroll functionality has been merged directly into Watir. 
+Please update your Watir version and remove this gem from your gemfile.
+
+  POST_INSTALL_MESSAGE
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
