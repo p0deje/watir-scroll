@@ -1,3 +1,5 @@
+### :warning: :warning: :warning: [watir-scroll was merged in Watir](https://github.com/watir/watir/pull/831). Please, upgrade Watir to [6.16](http://watir.com/watir-6-16/) and don't use this gem directly. :warning: :warning: :warning:
+
 # watir-scroll [![Build Status](https://travis-ci.org/p0deje/watir-scroll.svg?branch=master)](https://travis-ci.org/p0deje/watir-scroll) [![Gem Version](https://badge.fury.io/rb/watir-scroll.svg)](http://badge.fury.io/rb/watir-scroll)
 
 Scrolling API for [Watir](http://github.com/watir/watir).
